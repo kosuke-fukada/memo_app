@@ -1,0 +1,28 @@
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - WATCHPACK_POLLING=true
+    volumes:
+      - ./src:/app
+    ports:
+      - 3000:3000
+    tty: true
+  db:
+    image: postgres:14.17
+    container_name: db
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=sample_db
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+volumes:
+  postgres:
