@@ -16,11 +16,12 @@ services:
     container_name: db
     restart: always
     environment:
-      - POSTGRES_USER=root
+      - POSTGRES_USER=newuser
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=sample_db
     volumes:
       - postgres:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d
     ports:
       - 5432:5432
 
