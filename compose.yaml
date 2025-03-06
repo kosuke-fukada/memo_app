@@ -7,7 +7,7 @@ services:
     environment:
       - WATCHPACK_POLLING=true
     volumes:
-      - ./src:/app
+      - ./:/app
     ports:
       - 3000:3000
     tty: true
