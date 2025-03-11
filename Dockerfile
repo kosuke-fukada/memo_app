@@ -7,5 +7,3 @@ RUN npm install -g pnpm
 RUN pnpm init
 
 COPY . .
-
-RUN pnpm install
