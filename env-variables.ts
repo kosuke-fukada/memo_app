@@ -5,7 +5,8 @@ const envVariables = z.object({
   AUTH_GOOGLE_ID: z.string(),
   AUTH_GOOGLE_SECRET: z.string(),
   NEXTAUTH_URL: z.string().url(),
-  NEXTAUTH_SECRET: z.string()
+  NEXTAUTH_SECRET: z.string(),
+  AUTH_DRIZZLE_URL: z.string().url()
 })
 
 envVariables.parse(process.env)
